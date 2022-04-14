@@ -1,0 +1,1 @@
+SELECT Name,money,user_status(money)AS user_status FROM mdb1.users order by money;

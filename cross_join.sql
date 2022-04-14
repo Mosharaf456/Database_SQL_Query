@@ -30,4 +30,6 @@ select * from mdb1.users where money > (select avg(money) from mdb1.users);
 
 
 
+
+
    
