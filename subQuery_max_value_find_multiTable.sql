@@ -10,6 +10,25 @@ SELECT MAX(EmpID) FROM
     UNION ALL
     SELECT EmpID FROM  mdb2.emp_test
     ) as subQuery ;
+
+####for nth max like 1st(n=1) max offset must n-1 ,,
+#### 1-1=0
+SELECT * FROM
+    (
+    SELECT EmpID FROM  mdb2.emp
+    UNION ALL
+    SELECT EmpID FROM  mdb2.emp_test
+    ) as subQ order by EmpID desc LIMIT 1 OFFSET 0;
+    
+    
+####for nth min like 1st(n=1) max offset must n-1 ,,
+#### 1-1=0
+SELECT * FROM
+    (
+    SELECT EmpID FROM  mdb2.emp
+    UNION ALL
+    SELECT EmpID FROM  mdb2.emp_test
+    ) as subQ order by EmpID asc LIMIT 1 OFFSET 0;
     
 ##another one from different  3 tables
 SELECT MAX(EmpID) as MaxID,MIN(EmpID)as MinID
